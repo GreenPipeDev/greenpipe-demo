@@ -1,10 +1,14 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GreenPipe | Lanza sin romper nada</title>
-  <meta name="description" content="Pruebas automatizadas y pipelines confiables para startups, listos en dos semanas, sin contratar un QA a tiempo completo.">
+  <title>GreenPipe | Ship without breaking things</title>
+  <meta name="description" content="Automated tests and reliable pipelines for startups, ready in two weeks, without hiring a full-time QA engineer.">
+  <link rel="canonical" href="https://greenpipedev.github.io/greenpipe-demo/">
+  <link rel="alternate" hreflang="en" href="https://greenpipedev.github.io/greenpipe-demo/">
+  <link rel="alternate" hreflang="es" href="https://greenpipedev.github.io/greenpipe-demo/es/">
+  <link rel="alternate" hreflang="x-default" href="https://greenpipedev.github.io/greenpipe-demo/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -36,6 +40,7 @@
     .top nav { display: flex; gap: 1.5rem; align-items: center; font-weight: 500; font-size: .98rem; }
     .top nav a { color: var(--pine); text-decoration: none; }
     .top nav a:hover { text-decoration: underline; }
+    .top nav a.lang { font-size: .9rem; color: var(--moss); border: 1px solid var(--line); border-radius: 999px; padding: .3rem .75rem; }
 
     .btn { display: inline-block; padding: .85rem 1.4rem; font-family: var(--body); font-weight: 600; font-size: 1rem; line-height: 1.2; color: #fff; background: var(--green); border-radius: 999px; text-decoration: none; transition: background .15s ease; }
     .btn:hover { background: var(--green-deep); }
@@ -47,7 +52,7 @@
     .sub { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.5; color: var(--moss); max-width: 34rem; margin: 0 0 2rem; }
     .hero .note { margin: 1rem 0 0; font-size: .95rem; color: var(--moss); }
 
-    /* Panel de checks: lo que el cliente ve en su pull request */
+    /* Checks panel: what the client sees on their pull request */
     .checks { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 1.25rem; box-shadow: 0 24px 48px -32px rgba(14, 51, 39, .45); }
     .checks h2 { font-family: var(--body); font-size: .95rem; font-weight: 600; margin: 0 0 .9rem; color: var(--moss); }
     .checks ol { list-style: none; margin: 0; padding: 0; position: relative; }
@@ -111,7 +116,8 @@
       .hero { padding-top: 2rem; padding-bottom: 4rem; }
       .cards { grid-template-columns: 1fr; }
       section.band { padding: 3.5rem 0; }
-      .top nav a:not(.btn) { display: none; }
+      .top nav a:not(.btn):not(.lang) { display: none; }
+      .top nav { gap: .9rem; }
       .wrap { padding: 0 1rem; }
       .cta { padding: 2.75rem 1.25rem; }
     }
@@ -119,7 +125,7 @@
 </head>
 <body>
   <header class="top wrap">
-    <a class="brand" href="#inicio" aria-label="GreenPipe, inicio">
+    <a class="brand" href="#top" aria-label="GreenPipe, home">
       <svg viewBox="0 0 48 22" fill="none" aria-hidden="true">
         <path d="M2 11h12" stroke="#1a8f4c" stroke-width="5" stroke-linecap="round"/>
         <circle cx="24" cy="11" r="8.5" fill="#1a8f4c"/>
@@ -128,45 +134,46 @@
       </svg>
       GreenPipe
     </a>
-    <nav aria-label="Principal">
-      <a href="#servicios">Servicios</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
       <a href="#demo">Demo</a>
-      <a href="#quien-esta-detras">Quién está detrás</a>
-      <a class="btn small" href="https://calendly.com/jorgeyosmiel90/llamada-de-15-minutos">Agenda 15 minutos</a>
+      <a href="#about">Who's behind it</a>
+      <a class="lang" href="es/" lang="es" hreflang="es">Español</a>
+      <a class="btn small" href="https://calendly.com/jorgeyosmiel90/llamada-de-15-minutos">Book 15 minutes</a>
     </nav>
   </header>
 
-  <main id="inicio">
+  <main id="top">
     <div class="hero wrap">
       <div>
-        <h1>Lanza sin romper nada.</h1>
-        <p class="sub">Pruebas automatizadas y pipelines confiables para startups, listos en dos semanas, sin contratar un QA a tiempo completo.</p>
-        <a class="btn" href="https://calendly.com/jorgeyosmiel90/llamada-de-15-minutos">Agenda 15 minutos</a>
-        <p class="note">Una llamada corta para ver tu stack y saber por dónde empezar.</p>
+        <h1>Ship without breaking things.</h1>
+        <p class="sub">Automated tests and reliable pipelines for startups, ready in two weeks, without hiring a full-time QA engineer.</p>
+        <a class="btn" href="https://calendly.com/jorgeyosmiel90/llamada-de-15-minutos">Book 15 minutes</a>
+        <p class="note">A short call to look at your stack and work out where to start.</p>
       </div>
 
-      <aside class="checks" aria-label="Ejemplo de checks en un pull request">
-        <h2>Pull request #12: cambia el cálculo de facturación</h2>
+      <aside class="checks" aria-label="Example checks on a pull request">
+        <h2>Pull request #12: change the billing calculation</h2>
         <ol>
           <li>
             <span class="dot"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.3l2.3 2.3 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div><span class="name">Instalación y build</span><span class="meta">Pasó en 38 s</span></div>
+            <div><span class="name">Install and build</span><span class="meta">Passed in 38s</span></div>
           </li>
           <li>
             <span class="dot"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.3l2.3 2.3 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div><span class="name">Tests de login</span><span class="meta">3 de 3 pasaron</span></div>
+            <div><span class="name">Login tests</span><span class="meta">3 of 3 passed</span></div>
           </li>
           <li>
             <span class="dot fail"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-            <div><span class="name">Tests de la calculadora</span><span class="meta">2 fallaron: esperaba 3000, recibió 130</span></div>
+            <div><span class="name">Calculator tests</span><span class="meta">2 failed: expected 3000, received 130</span></div>
           </li>
           <li>
             <span class="dot"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1.5l1.2 3.3L10.5 6 7.2 7.2 6 10.5 4.8 7.2 1.5 6l3.3-1.2z" fill="currentColor"/></svg></span>
             <div>
-              <span class="name">Análisis con IA, publicado en el PR</span>
+              <span class="name">AI analysis, posted on the PR</span>
               <div class="ai">
-                <strong>Causa probable</strong>
-                En <code>server.js</code> el bruto se calcula como <code>hours + rate</code>. Arreglo: volver a <code>hours * rate</code>.
+                <strong>Likely cause</strong>
+                In <code>server.js</code>, gross is computed as <code>hours + rate</code>. Fix: change it back to <code>hours * rate</code>.
               </div>
             </div>
           </li>
@@ -174,44 +181,44 @@
       </aside>
     </div>
 
-    <section class="band white" id="servicios">
+    <section class="band white" id="services">
       <div class="wrap">
-        <h2 class="title">Lo que GreenPipe deja en tu repositorio</h2>
-        <p class="intro">Tres paquetes con alcance cerrado. Todo se monta sobre tu código y tu CI, y al terminar queda en tu repo.</p>
+        <h2 class="title">What GreenPipe leaves in your repository</h2>
+        <p class="intro">Three fixed-scope packages. Everything is built on your code and your CI, and it stays in your repo when the work is done.</p>
         <div class="cards">
           <article class="card">
-            <h3>Setup en 2 semanas</h3>
-            <p>Tu producto pasa de no tener pruebas automáticas a comprobar sus flujos críticos en cada pull request.</p>
-            <h4>Qué incluye</h4>
+            <h3>Setup in 2 weeks</h3>
+            <p>Your product goes from no automated tests to checking its critical flows on every pull request.</p>
+            <h4>What's included</h4>
             <ul>
-              <li>Tests de API y de interfaz con Playwright para hasta 5 flujos críticos</li>
-              <li>Pipeline en GitHub Actions que corre en cada pull request</li>
-              <li>Reporte con traza y captura de cada fallo</li>
-              <li>Sesión de traspaso y documentación en tu repo</li>
+              <li>API and UI tests with Playwright for up to 5 critical flows</li>
+              <li>GitHub Actions pipeline that runs on every pull request</li>
+              <li>Report with a trace and screenshot for every failure</li>
+              <li>Handoff session and documentation in your repo</li>
             </ul>
-            <p class="format">Proyecto cerrado de 2 semanas</p>
+            <p class="format">Fixed-scope project, 2 weeks</p>
           </article>
           <article class="card">
-            <h3>Análisis con IA</h3>
-            <p>Cuando un test falla, el pipeline comenta en el PR la causa probable y un arreglo concreto.</p>
-            <h4>Qué incluye</h4>
+            <h3>AI failure analysis</h3>
+            <p>When a test fails, the pipeline comments on the PR with the likely cause and a specific fix.</p>
+            <h4>What's included</h4>
             <ul>
-              <li>Comentario automático en cada pull request con tests rotos</li>
-              <li>Instrucciones ajustadas a tu stack y a tu código</li>
-              <li>Funciona con tu propia clave de API: el coste lo controlas tú</li>
+              <li>Automatic comment on every pull request with failing tests</li>
+              <li>Instructions tuned to your stack and your code</li>
+              <li>Runs on your own API key, so you control the cost</li>
             </ul>
-            <p class="format">Incluido en el Setup, o añadido a un pipeline que ya tengas</p>
+            <p class="format">Included in Setup, or added to a pipeline you already have</p>
           </article>
           <article class="card">
-            <h3>Mantenimiento mensual</h3>
-            <p>Las pruebas crecen al ritmo del producto y el pipeline sigue siendo rápido.</p>
-            <h4>Qué incluye</h4>
+            <h3>Monthly maintenance</h3>
+            <p>Your tests grow with the product and the pipeline stays fast.</p>
+            <h4>What's included</h4>
             <ul>
-              <li>Tests nuevos para lo que lances ese mes</li>
-              <li>Arreglo de tests inestables</li>
-              <li>Revisión mensual de tiempos y fallos del pipeline</li>
+              <li>New tests for what you ship that month</li>
+              <li>Flaky test fixes</li>
+              <li>Monthly review of pipeline run times and failures</li>
             </ul>
-            <p class="format">Cuota mensual fija</p>
+            <p class="format">Flat monthly fee</p>
           </article>
         </div>
       </div>
@@ -220,29 +227,29 @@
     <section class="band" id="demo">
       <div class="wrap demo">
         <div>
-          <h2 class="title">Míralo funcionando</h2>
-          <p class="intro" style="margin-bottom:1.25rem">Un repositorio público con una app pequeña, sus tests y el pipeline completo. Incluye un pull request roto a propósito para ver el comentario de IA.</p>
+          <h2 class="title">See it running</h2>
+          <p class="intro" style="margin-bottom:1.25rem">A public repository with a small app, its tests and the full pipeline. It includes a pull request broken on purpose so you can see the AI comment.</p>
           <ul>
-            <li>App Express con login y calculadora</li>
-            <li>Tests de API y de interfaz con Playwright</li>
-            <li>GitHub Actions con reporte y análisis de fallos</li>
+            <li>Express app with login and a calculator</li>
+            <li>API and UI tests with Playwright</li>
+            <li>GitHub Actions with a report and failure analysis</li>
           </ul>
-          <a class="repo" href="https://github.com/GreenPipeDev/greenpipe-demo">Ver el repositorio greenpipe-demo en GitHub</a>
+          <a class="repo" href="https://github.com/GreenPipeDev/greenpipe-demo">View the greenpipe-demo repository on GitHub</a>
         </div>
         <figure>
-          <img src="demo.png" alt="Captura de la app de la demo: calculadora que muestra el resultado tras iniciar sesión" width="800" height="640" loading="lazy">
+          <img src="demo.png" alt="Screenshot of the demo app, in Spanish: a calculator showing its result after login" width="800" height="640" loading="lazy">
         </figure>
       </div>
     </section>
 
-    <section class="band white" id="quien-esta-detras">
+    <section class="band white" id="about">
       <div class="wrap about">
-        <h2 class="title">Quién está detrás</h2>
+        <h2 class="title">Who's behind it</h2>
         <div>
-          <p>GreenPipe lo fundó Jorge, SDET con experiencia en QA Automation, CI/CD y delivery. Lleva años haciendo que equipos de producto lancen más seguido y con menos sustos.</p>
-          <p>GreenPipe es ese trabajo empaquetado para startups: las pruebas y el pipeline que tu equipo necesita, montados y funcionando. Jorge dirige cada proyecto y es con quien hablas desde la primera llamada.</p>
-          <ul class="skills" aria-label="Áreas de experiencia">
-            <li>QA Automation</li>
+          <p>GreenPipe was founded by Jorge, an SDET with experience in QA automation, CI/CD and delivery. He has spent years helping product teams ship more often with fewer surprises.</p>
+          <p>GreenPipe is that work packaged for startups: the tests and pipeline your team needs, set up and running. Jorge leads every project and is who you talk to from the first call.</p>
+          <ul class="skills" aria-label="Areas of experience">
+            <li>QA automation</li>
             <li>Playwright</li>
             <li>CI/CD</li>
             <li>GitHub Actions</li>
@@ -255,9 +262,9 @@
     <section class="band">
       <div class="wrap">
         <div class="cta">
-          <h2>¿Tu próximo deploy da miedo?</h2>
-          <p>Qué stack usas y qué se rompe más: con eso basta. En 15 minutos sabrás si GreenPipe encaja con tu equipo.</p>
-          <a class="btn" href="https://calendly.com/jorgeyosmiel90/llamada-de-15-minutos">Agenda 15 minutos</a>
+          <h2>Is your next deploy scary?</h2>
+          <p>Bring your stack and what breaks most often. In 15 minutes you'll know whether GreenPipe fits your team.</p>
+          <a class="btn" href="https://calendly.com/jorgeyosmiel90/llamada-de-15-minutos">Book 15 minutes</a>
         </div>
       </div>
     </section>
@@ -265,7 +272,7 @@
 
   <footer class="wrap">
     <span>© 2026 GreenPipe</span>
-    <a href="https://www.linkedin.com/in/jorge-yosmiel/">Jorge en LinkedIn</a>
+    <a href="https://www.linkedin.com/in/jorge-yosmiel/">Jorge on LinkedIn</a>
   </footer>
 </body>
 </html>
