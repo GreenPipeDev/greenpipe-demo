@@ -35,7 +35,7 @@ app.post('/api/calculate', (req, res) => {
       .json({ error: 'hours, rate y expenses deben ser números no negativos' });
   }
 
-  const gross = hours * rate;
+  const gross = hours + rate;
   const net = gross - expenses;
   const needed = expenses * 1.3;
   const independent = net >= needed;
