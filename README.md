@@ -2,8 +2,8 @@
 
 Demo de **GreenPipe**: una app pequeña con sus tests automatizados y un pipeline que, cuando algo se rompe en un pull request, comenta la causa probable y el arreglo usando IA.
 
-- Landing: https://jorgeyosmiel.github.io/greenpipe-demo/
-- Tests: [![Tests](https://github.com/jorgeyosmiel/greenpipe-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/jorgeyosmiel/greenpipe-demo/actions/workflows/tests.yml)
+- Landing: https://greenpipedev.github.io/greenpipe-demo/
+- Tests: [![Tests](https://github.com/GreenPipeDev/greenpipe-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/GreenPipeDev/greenpipe-demo/actions/workflows/tests.yml)
 
 ## Qué hay dentro
 
@@ -86,13 +86,13 @@ El script usa estas variables de entorno:
 Guarda tu clave de Anthropic como secret (el comando te la pide sin mostrarla):
 
 ```bash
-gh secret set ANTHROPIC_API_KEY --repo jorgeyosmiel/greenpipe-demo
+gh secret set ANTHROPIC_API_KEY --repo GreenPipeDev/greenpipe-demo
 ```
 
 El modelo por defecto es `claude-sonnet-4-5`. Anthropic lo retira el 30 de noviembre de 2026; para pasar a uno vigente sin tocar código:
 
 ```bash
-gh variable set ANTHROPIC_MODEL --body "claude-sonnet-5-5" --repo jorgeyosmiel/greenpipe-demo
+gh variable set ANTHROPIC_MODEL --body "claude-sonnet-5-5" --repo GreenPipeDev/greenpipe-demo
 ```
 
 Para probar el script en tu máquina, rompe algo, corre los tests y lánzalo. Sin `GITHUB_TOKEN` ni `PR_NUMBER` imprime el análisis en la terminal en vez de comentar:
