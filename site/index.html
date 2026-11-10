@@ -79,6 +79,12 @@
     .card { background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--green); border-radius: 4px 4px 14px 14px; padding: 1.6rem 1.5rem 1.75rem; }
     .card h3 { font-family: var(--display); font-weight: 700; font-size: 1.4rem; line-height: 1.15; letter-spacing: -.015em; margin: 0 0 .6rem; }
     .card p { margin: 0; color: var(--moss); }
+    .card { display: flex; flex-direction: column; }
+    .card h4 { font-family: var(--body); font-size: .95rem; font-weight: 600; margin: 1.25rem 0 .5rem; }
+    .card ul { list-style: none; margin: 0 0 1.5rem; padding: 0; font-size: .97rem; }
+    .card li { position: relative; padding-left: 1.5rem; margin-bottom: .45rem; line-height: 1.45; }
+    .card li::before { content: ""; position: absolute; left: .1rem; top: .42em; width: .7rem; height: .38rem; border-left: 2px solid var(--green); border-bottom: 2px solid var(--green); transform: rotate(-45deg); }
+    .card p.format { margin-top: auto; padding-top: .9rem; border-top: 1px solid var(--line); color: var(--pine); font-weight: 600; font-size: .95rem; }
 
     .demo { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 3rem; align-items: center; }
     .demo figure { margin: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--lichen); }
@@ -171,19 +177,41 @@
     <section class="band white" id="servicios">
       <div class="wrap">
         <h2 class="title">Lo que GreenPipe deja en tu repositorio</h2>
-        <p class="intro">Todo se monta sobre tu código y tu CI. Al terminar, queda en tu repo y tu equipo lo entiende.</p>
+        <p class="intro">Tres paquetes con alcance cerrado. Todo se monta sobre tu código y tu CI, y al terminar queda en tu repo.</p>
         <div class="cards">
           <article class="card">
             <h3>Setup en 2 semanas</h3>
-            <p>Tests de API y de interfaz con Playwright sobre tus flujos críticos, corriendo en cada pull request desde el primer sprint.</p>
+            <p>Tu producto pasa de no tener pruebas automáticas a comprobar sus flujos críticos en cada pull request.</p>
+            <h4>Qué incluye</h4>
+            <ul>
+              <li>Tests de API y de interfaz con Playwright para hasta 5 flujos críticos</li>
+              <li>Pipeline en GitHub Actions que corre en cada pull request</li>
+              <li>Reporte con traza y captura de cada fallo</li>
+              <li>Sesión de traspaso y documentación en tu repo</li>
+            </ul>
+            <p class="format">Proyecto cerrado de 2 semanas</p>
           </article>
           <article class="card">
             <h3>Análisis con IA</h3>
-            <p>Cuando un test falla, el pipeline comenta en el PR la causa probable y un arreglo concreto. Menos tiempo leyendo logs.</p>
+            <p>Cuando un test falla, el pipeline comenta en el PR la causa probable y un arreglo concreto.</p>
+            <h4>Qué incluye</h4>
+            <ul>
+              <li>Comentario automático en cada pull request con tests rotos</li>
+              <li>Instrucciones ajustadas a tu stack y a tu código</li>
+              <li>Funciona con tu propia clave de API: el coste lo controlas tú</li>
+            </ul>
+            <p class="format">Incluido en el Setup, o añadido a un pipeline que ya tengas</p>
           </article>
           <article class="card">
             <h3>Mantenimiento mensual</h3>
-            <p>Tests nuevos para lo que lanzas, limpieza de tests inestables y un pipeline que sigue siendo rápido cuando el producto crece.</p>
+            <p>Las pruebas crecen al ritmo del producto y el pipeline sigue siendo rápido.</p>
+            <h4>Qué incluye</h4>
+            <ul>
+              <li>Tests nuevos para lo que lances ese mes</li>
+              <li>Arreglo de tests inestables</li>
+              <li>Revisión mensual de tiempos y fallos del pipeline</li>
+            </ul>
+            <p class="format">Cuota mensual fija</p>
           </article>
         </div>
       </div>
