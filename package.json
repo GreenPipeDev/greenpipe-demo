@@ -1,0 +1,25 @@
+{
+  "name": "greenpipe-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo de GreenPipe: app Express + tests Playwright + análisis de fallos con IA en cada pull request.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "playwright test",
+    "test:api": "playwright test tests/api",
+    "test:ui": "playwright test tests/ui",
+    "report": "playwright show-report",
+    "analyze": "tsx scripts/analyze-failures.ts"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.22.3"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^1.7.0",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
